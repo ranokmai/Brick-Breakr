@@ -37,9 +37,9 @@ namespace Brick_Breakr
 
         Ellipse Breakr;
 
-        Ellipse ball_1;
+        /*Ellipse ball_1;
         Ellipse ball_2;
-        Ellipse ball_3;
+        Ellipse ball_3;*/
         int lives_left = 2;
 
         bool life_lost;
@@ -65,17 +65,26 @@ namespace Brick_Breakr
             life_lost_timer = new System.Timers.Timer(3000);
             life_lost_timer.Elapsed += new System.Timers.ElapsedEventHandler(life_lost_timer_elapsed);
 
-            init_breakrs();
+            //init_breakrs();
             place_bricks();
 
-            Breakr = ball_1;
+            Breakr = new Ellipse();
+            Breakr.Width = 20;
+            Breakr.Height = 20;
+            Breakr.Stroke = Brushes.Black;
+            Breakr.Fill = Brushes.Red;
+            Breakr.Opacity = 0.8;
+
+            MyGameCanvas.Children.Insert(0, Breakr);
+            Canvas.SetTop(Breakr, Canvas.GetTop(Breakr_Start));
+            Canvas.SetLeft(Breakr, Canvas.GetLeft(Breakr_Start));
             Breakr.Visibility = System.Windows.Visibility.Visible;
 
             life_lost = false;
 
         }
 
-        private void init_breakrs()
+        /*private void init_breakrs()
         {
             ball_1 = new Ellipse();
             ball_1.Width = 20;
@@ -113,7 +122,7 @@ namespace Brick_Breakr
             Canvas.SetLeft(ball_3, Canvas.GetLeft(Breakr_Start));
             ball_3.Visibility = System.Windows.Visibility.Hidden;
 
-        }
+        }*/
 
         private void place_bricks()
         {
@@ -221,7 +230,7 @@ namespace Brick_Breakr
         private void reset_breakr()
         {
             Breakr.Visibility = System.Windows.Visibility.Hidden;
-            MyGameCanvas.Children.Remove(Breakr);
+            /*MyGameCanvas.Children.Remove(Breakr);
 
             if (lives_left == 1)
             {
@@ -229,7 +238,7 @@ namespace Brick_Breakr
             } 
             else if (lives_left == 0) {
                 Breakr = ball_3;
-            }
+            }*/
 
             Canvas.SetTop(Breakr, Canvas.GetTop(Breakr_Start));
             Canvas.SetLeft(Breakr, Canvas.GetLeft(Breakr_Start));
