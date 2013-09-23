@@ -14,3 +14,11 @@ The paddle and the bricks will deflect the ball near their edges.
 Controls:
 Left arrow-key: move the paddle left
 Right arrow-key: move the paddle right
+
+TO PULL AND BUILD PROJECT
+In git, enter the command:
+
+	git clone https://github.com/ranokmai/Brick-Breakr.git
+
+This will clone the repository in the current directory.
+From here, open up the solution in Visual Studio, and build.
