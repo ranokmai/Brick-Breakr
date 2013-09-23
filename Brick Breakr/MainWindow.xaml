@@ -1,0 +1,29 @@
+﻿<Window x:Class="Brick_Breakr.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Brick Breakr" Height="600" Width="800" KeyDown="KeyDownHandler" KeyUp="KeyUpHandler">
+    <Grid>
+        <Canvas Name="MyGameCanvas" Background="LightGray" Grid.ColumnSpan="2" Margin="1,0,1,-1">
+            
+            <Ellipse Name="Breakr_Start" Fill="Red" Height="20" Canvas.Left="390" Stroke="Black" Canvas.Top="350" Width="20" Opacity ="0.8" Visibility="Hidden"></Ellipse>
+            <Ellipse Name="Life_1" Fill="Red" Height="10" Canvas.Left="720" Stroke="Black" Canvas.Top="10" Width="10" Opacity ="0.8"></Ellipse>
+            <Ellipse Name="Life_2" Fill="Red" Height="10" Canvas.Left="740" Stroke="Black" Canvas.Top="10" Width="10" Opacity ="0.8"></Ellipse>
+            <Ellipse Name="Life_3" Fill="Red" Height="10" Canvas.Left="760" Stroke="Black" Canvas.Top="10" Width="10" Opacity ="0.8"></Ellipse>
+            <Rectangle Name ="Paddle" Fill="Black" Height="16" Canvas.Top="520" Width="200" Canvas.Left="340"></Rectangle>
+            <RichTextBox Name ="GAME_OVER" Height="98" Canvas.Left="197" Canvas.Top="161" Width="410" Visibility="Hidden">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="GAME OVER" FontSize="72"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox Name ="YOU_WIN" Height="98" Canvas.Left="241" Canvas.Top="161" Width="318" Visibility="Hidden">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="YOU WIN" FontSize="72"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </Canvas>
+    </Grid>
+</Window>
